@@ -1,7 +1,7 @@
 const service = require("./reservations.services");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 //const mergeSort = require("../suportFuntions/generalSuportFunctions/mergeSort")
-const hasProperties = require("../suportFuntions/generalSuportFunctions/hasProperties")
+//const hasProperties = require("../suportFuntions/generalSuportFunctions/hasProperties")
 const reservationExists = require("./suportFunctions/reservationExists");
 const checkDataTypes = require("./suportFunctions/checkDataTypes");
 const compareRT = require("./suportFunctions/compares");
@@ -68,7 +68,7 @@ module.exports = {
     asyncErrorBoundary(reservationExists),
     asyncErrorBoundary(read)],
   create:[
-    asyncErrorBoundary(hasProperties("first_name","last_name","people","reservation_time","reservation_date", "mobile_number")),
+    //asyncErrorBoundary(hasProperties("first_name","last_name","people","reservation_time","reservation_date", "mobile_number")),
     asyncErrorBoundary(checkDataTypes),
     asyncErrorBoundary(checkDate),
     asyncErrorBoundary(checkTime),
@@ -77,7 +77,7 @@ module.exports = {
     asyncErrorBoundary(reservationExists),
     asyncErrorBoundary(destroy)],
   update:[
-    asyncErrorBoundary(hasProperties("first_name","last_name","people","reservation_time","reservation_date", "mobile_number")),
+    //asyncErrorBoundary(hasProperties("first_name","last_name","people","reservation_time","reservation_date", "mobile_number")),
     asyncErrorBoundary(checkDataTypes),
     asyncErrorBoundary(checkDate),
     asyncErrorBoundary(checkTime),
