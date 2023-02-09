@@ -1,6 +1,6 @@
 const service = require("./reservations.services");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
-const mergeSort = require("../suportFuntions/generalSuportFunctions/mergeSort")
+//const mergeSort = require("../suportFuntions/generalSuportFunctions/mergeSort")
 const hasProperties = require("../suportFuntions/generalSuportFunctions/hasProperties")
 const reservationExists = require("./suportFunctions/reservationExists");
 const checkDataTypes = require("./suportFunctions/checkDataTypes");
@@ -21,8 +21,8 @@ async function list(req, res) {
     data = await service.list2();
     data = data.filter((res)=>res.mobile_number.includes(mobile_number))
   }
-  let sortedData = mergeSort(compareRT, data)
-  let reduced = sortedData.filter((res)=>res.status!=="finished")
+  //let sortedData = mergeSort(compareRT, data)
+  let reduced = data.filter((res)=>res.status!=="finished")
   return res.status(200).json({data:reduced});
 }
 
