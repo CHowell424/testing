@@ -6,7 +6,7 @@ function read (reservationId){
 }
 
 // returns all reservations with the given date with all feilds
-function list (param1 = null,param2,param3){
+function list (param1 = null,param2 = null,param3 = null){
     if(param1){
         return knex("reservations").select("*").where(param1).whereNot(param2).whereNot(param3);
     }else{
